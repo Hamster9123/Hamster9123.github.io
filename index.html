@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Datatable</title>
+    <link href="bootstrap4.css" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" rel="stylesheet" >
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="datatable.js"></script>
+
+
+    <style>
+
+        tr{
+            transition-property: background-color;
+            transition-duration: 3s;
+            background-color: #f3f3f3;
+            cursor: pointer;
+            transition: all .2s ease-in-out;
+            border-top-left-radius: 100px;
+        }
+        tr:not(:first-child):active{
+            transform: scale(0.985);
+            background-color: #262626;
+        }
+        tr:not(:first-child):checked{
+            transform: scale(0.985);
+            background-color: #262626;
+        }
+        tr:not(:first-child):hover{
+            background-color: rgb(210, 210, 210);
+            color: black;
+        }
+    </style>
+
+</head>
+<body style="background-color: #4b5257">
+<div style="width: 70%; margin: 0 auto; background-color: #f8f8f8; border-radius: 0 0 50px 50px; padding: 30px 30px 100px 30px">
+    <h1 class="text-center">Sounds</h1>
+    <div id="datatable">Please wait</div>
+</div>
+
+
+<script>
+    // Initialize Firebase
+    var firebaseConfig = {
+        apiKey: "AIzaSyAlj0wKUKkT-wQADQoDwcFLcZ9axU0Zp-o",
+        authDomain: "jsjsjsjsjjsjsjs-6fe8b.firebaseapp.com",
+        databaseURL: "https://jsjsjsjsjjsjsjs-6fe8b.firebaseio.com",
+        projectId: "jsjsjsjsjjsjsjs-6fe8b",
+        storageBucket: "jsjsjsjsjjsjsjs-6fe8b.appspot.com",
+        messagingSenderId: "122132350383",
+        appId: "1:122132350383:web:6bee227bb3a709fb"
+    };
+    firebase.initializeApp(firebaseConfig);
+    var dataTableExample = new FirebaseDataTable('#datatable');
+</script>
+</body>
+</html>
